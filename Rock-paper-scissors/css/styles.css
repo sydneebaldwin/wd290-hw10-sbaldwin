@@ -1,0 +1,5 @@
+.choice {background-color: #fff;}
+.selected { outline: 3px solid currentColor; }
+.win { background-color: #0f0; }
+.lose { background-color: #f00; color: #fff; }
+.tie { background-color: #ff0; }
