@@ -95,7 +95,13 @@ function render(player, computer, outcome, clickedButton) {
   computerEl.textContent = computer;
 
   // Text result
-  resultEl.textContent = "Result: " + outcome;
+  if (outcome === "win") {
+    resultEl.textContent = "Yayyyy! You win!";
+  } else if (outcome === "lose") {
+    resultEl.textContent = "You lose. Bummer.";
+  } else {
+    resultEl.textContent = "Uhhh its a tie. Try again.";
+  }
 
   // Class-based styling (highlight states)
   clearResultStates();

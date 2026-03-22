@@ -1,5 +1,117 @@
-.choice {background-color: #fff;}
-.selected { outline: 3px solid currentColor; }
-.win { background-color: #0f0; }
-.lose { background-color: #f00; color: #fff; }
-.tie { background-color: #ff0; }
+@font-face {
+    font-family: geist;
+    src: url(../fonts/GeistMono-VariableFont_wght.ttf) format("truetype");
+}
+
+:root {
+    --orange: #f7ac69;
+    --dark: #333;
+    --light: #feeed5;
+    --red: #f46969;
+    --yellow: #f4e369;
+    --green:#69f4a2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "geist", monospace;
+    text-transform: uppercase;
+    color: var(--dark)
+}
+
+body {
+    background-color: var(--orange);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    background-color: var(--light);
+    border: 5px solid var(--dark);
+    width: clamp(300px, 80vw, 800px);
+    padding: 3rem;
+    gap: 2rem;
+}
+
+.col-1 {
+    width: 75%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+}
+
+.choice {
+    background-color: var(--orange);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--light);
+    border-radius: 50px;
+}
+
+.status {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.status div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#result {
+    padding: 2rem;
+    font-size: 1.25rem;
+}
+
+.divider {
+    width: 3px;
+    background-color: var(--dark);
+}
+
+.scoreboard {
+    width: 20%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.scoreboard h4 {
+    font-size: 1.25rem;
+}
+
+.scoreboard p {
+    line-height: 1.5;
+}
+
+.scoreboard span {
+    background-color: var(--orange);
+    color: var(--light);
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+}
+
+.selected { outline: currentColor; }
+.win { background-color: var(--green); color: var(--dark);}
+.lose { background-color: var(--red); color: var(--light); }
+.tie { background-color: var(--yellow); color: var(--dark);}
